@@ -23,13 +23,6 @@ public class CalculSalaire implements IVisitorEntreprise {
 	}
 
 	/**
-	 * @return the salaire
-	 */
-	public double getSalaire() {
-		return Salaire;
-	}
-
-	/**
 	 * @param salaire the salaire to set
 	 */
 	public void setSalaire(double salaire) {
@@ -38,28 +31,28 @@ public class CalculSalaire implements IVisitorEntreprise {
 
 	@Override
 	public void VisitorDirecteur(Directeur d) {
-		this.setSalaire(getSalaire()+d.getSalaireDirecteur());
+		this.setSalaire(d.getSalaireDirecteur());
 		
 	}
 
 	@Override
 	public void VisitorManager(Manager m) {
 		// TODO Auto-generated method stub
-		this.setSalaire(getSalaire()+m.getSalaireManager());
+		this.setSalaire(m.getSalaireManager());
 		
 	}
 
 	@Override
 	public void VisitorOuvrier(Ouvrier o) {
 		// TODO Auto-generated method stub
-		this.setSalaire(getSalaire()+o.getSalaireOuvrier());
+		this.setSalaire(o.getSalaireOuvrier());
 		
 	}
 
 	@Override
 	public void VisitorCommerciaux(Commerciaux c) {
 		// TODO Auto-generated method stub
-		this.setSalaire(getSalaire()+c.getSalaireCommerciaux());
+		this.setSalaire(c.getSalaireCommerciaux());
 		
 	}
 }
